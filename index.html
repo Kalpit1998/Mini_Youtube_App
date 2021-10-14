@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <link rel="icon" href="./favicon_32x32.ico">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <div id="left">
+            <div id="hamburger">
+                <img src="https://img.icons8.com/material-sharp/24/000000/menu--v1.png"/>
+            </div>
+            <div id="logo" onclick="showDefault()">
+                <img src="https://cdn.mos.cms.futurecdn.net/8gzcr6RpGStvZFA2qRt4v6-970-80.jpg.webp" alt="youtube logo">
+            </div>
+        </div>
+
+        <div id="middle">
+            <div class="middle" id="input-search">
+                <input type="text" id="search" placeholder="Search">
+            </div>
+            
+            <div id="search-icon" class="middle" onclick="showQuery()">
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/>
+            </div>
+
+            <div id="voice-search">
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/microphone.png"/>
+            </div>
+        </div>
+
+        <div id="right">
+            <!-- <div>
+                <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-grid-alignment-and-tools-kiranshastry-lineal-kiranshastry.png"/>
+            </div> -->
+
+            <div>
+                <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-grid-alignment-and-tools-kiranshastry-lineal-kiranshastry.png"/>
+            </div> 
+
+            <div>
+                <img src="https://img.icons8.com/material-outlined/24/000000/menu-2.png"/>
+            </div>
+
+            <div id="signin">
+                <div id="signlogo">
+                    <img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-user-interface-kiranshastry-gradient-kiranshastry.png"/>
+                </div>
+                <div id="signinText">
+                    <p>SIGN IN</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main id="movie-grid"></main>
+</body>
+<script src="./script.js"></script>
+</html>
