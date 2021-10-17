@@ -40,7 +40,7 @@ function signUp(e){
         return res.json();
     })
     .then((res)=>{
-        console.log(res);
+        // console.log(res);
         alert("Registration Succesfull!");
         window.location.href = "signin.html"
     })
