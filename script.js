@@ -1,20 +1,34 @@
+// =======================================================================================================================
+// function execute on window load
+// =======================================================================================================================
+
+
+window.onload = function(){
+
+    showDefault();
+}
+
 async function showDefault(){
 
     let popular = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=technology&type=videos&key=AIzaSyD2wqMv-MTZyCiDqKx9Eh1Vyy_YIJ2ErKc&maxResults=20`);
 
     let trending_videos = await popular.json();
 
-    console.log("Show default");
+    // console.log("Show default");
 
     appendVideos(trending_videos.items);
 }
 
-showDefault();
+// showDefault();
 
+
+// ======================================================================================================================
+// function for search input 
+// ======================================================================================================================
 
 async function showQuery(){
 
-    let query = document.getElementById("search").ariaValueMax;
+    let query = document.getElementById("search").value;
 
     let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=videos&key=AIzaSyD2wqMv-MTZyCiDqKx9Eh1Vyy_YIJ2ErKc&maxResults=20`);
 
@@ -24,6 +38,12 @@ async function showQuery(){
 
     appendVideos(data.items);
 }
+
+
+// ======================================================================================================================
+// Function to append result on DOM
+// ======================================================================================================================
+
 
 let videos = document.getElementById("movie-grid");
 
@@ -43,4 +63,35 @@ function appendVideos(videos_data){
 
         videos.append(div);
     });
+}
+
+
+
+// ======================================================================================================================
+// function to show username after login
+// ======================================================================================================================
+
+
+let userFromStorage = JSON.parse(localStorage.getItem("userdata"));
+
+console.log(userFromStorage[0])
+
+if(userFromStorage != undefined){
+
+    showUsername()
+}
+
+
+function showUsername(){
+
+    document.getElementById("signin").innerHTML = null;
+
+    document.getElementById("signin").innerHTML = userFromStorage[0].username;
+
+    document.getElementById("signin").style.border = "none";
+
+    window.onbeforeunload = function(){
+        localStorage.removeItem("userdata");
+        return;
+    }
 }

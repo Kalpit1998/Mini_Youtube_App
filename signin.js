@@ -50,11 +50,35 @@ function fetchmyData(username, token){
             return res.json();
         })
         .then((res) =>{
-            // console.log("res", res);
-            window.location.href = "index.html";
-            alert("Logged In Successfully")
+            
+            console.log("res", res);
+
+            setStorage(res);
+
+
+            // window.open("index.html","_blank");
+            // = "index.html";
+            // alert("Logged In Successfully")
         })
         .catch((err) =>{
             console.log("err", err);
         })
+}
+
+
+function setStorage(detaildata){
+    
+    if(localStorage.getItem("userdata") === null){
+        localStorage.setItem("userdata", JSON.stringify([]));
+    }
+
+    let userdetail = JSON.parse(localStorage.getItem("userdata"));
+
+    userdetail.push(detaildata);
+
+    localStorage.setItem("userdata",JSON.stringify(userdetail));
+
+    // alert("Logged in succesfully")
+
+    window.open("index.html", "_blank");
 }
