@@ -1,0 +1,24 @@
+form{
+    width: 40%;
+    margin: 1rem auto;
+}
+div{
+    margin-top: 0.5rem;
+}
+form div:nth-child(8){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+form div:nth-child(8) span{
+    color: #0B5ED7;
+    margin-right: 1rem;
+    font-weight: 500;
+}
+form div:nth-child(8) a{
+    text-decoration: none;
+}
+label{
+    font-weight: 500;
+    font-size: 1.1rem;
+}
